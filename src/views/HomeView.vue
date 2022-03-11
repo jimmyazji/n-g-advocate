@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Ahmad Eisa Advocates & Legal Consult" src="../assets/logo.jpeg" />
+    <img alt="Ahmad Eisa Advocates & Legal Consult" src="@/assets/logo.jpeg" />
   </div>
 </template>
 
