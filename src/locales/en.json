@@ -1,5 +1,16 @@
 {
-  "home":{
-    "message":"This is the home page"
+  "app": {
+    "title": "Advocates"
+  },
+  "home": {
+    "message": "This is the home page"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "services": "Services",
+    "team": "Our team",
+    "jobs": "Jobs",
+    "contact": "Contact us"
   }
 }

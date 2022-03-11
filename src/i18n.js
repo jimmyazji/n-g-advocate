@@ -1,11 +1,16 @@
 import { createI18n } from "vue-i18n";
+import getBrowserLocale from "./util/i18n/get-browser-locale";
+import { supportedLocalesInclude } from "./util/i18n/supported-locales";
 
-/**
- * Load locale messages
- *
- * The loaded `JSON` locale messages is pre-compiled by `@intlify/vue-i18n-loader`, which is integrated into `vue-cli-plugin-i18n`.
- * See: https://github.com/intlify/vue-i18n-loader#rocket-i18n-resource-pre-compilation
- */
+function getStartingLocale() {
+  const browserLocale = getBrowserLocale({ countryCodeOnly: true });
+  if (supportedLocalesInclude(browserLocale)) {
+    return browserLocale;
+  } else {
+    return process.env.VUE_APP_I18N_LOCALE || "en";
+  }
+}
+
 function loadLocaleMessages() {
   const locales = require.context(
     "./locales",
@@ -22,9 +27,11 @@ function loadLocaleMessages() {
   });
   return messages;
 }
-
+if (!localStorage.getItem("locale")) {
+  localStorage.setItem("locale", getStartingLocale());
+}
 export default createI18n({
-  locale: process.env.VUE_APP_I18N_LOCALE || "en",
+  locale: localStorage.getItem("locale"),
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
   messages: loadLocaleMessages(),
 });
