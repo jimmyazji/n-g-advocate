@@ -1,8 +1,9 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/contact">Contact us</router-link>
-  </nav>
-  <router-view />
+  <Navigation />
+  <main class="max-w-6xl mx-auto">
+    <router-view />
+  </main>
 </template>
+<script setup>
+import Navigation from "@/components/MainNavigation.vue";
+</script>
