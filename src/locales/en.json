@@ -1,9 +1,9 @@
 {
+  "email": "Email",
+  "address": "Address",
+  "phone": "Phone",
   "app": {
     "title": "Advocates"
-  },
-  "home": {
-    "message": "This is the home page"
   },
   "nav": {
     "home": "Home",
@@ -12,5 +12,19 @@
     "team": "Our team",
     "jobs": "Jobs",
     "contact": "Contact us"
+  },
+  "home": {
+    "message": "This is the home page"
+  },
+  "about": {
+    "get in touch": "Get in touch with us!",
+    "questions": "If you got any questions",
+    "message us": "Please Do not Hesitate to send us a message.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send message": "Send Message",
+    "connect": "Connect with us!"
   }
 }

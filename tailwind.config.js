@@ -4,19 +4,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'gold': {
-          DEFAULT: '#FFD700',
-          '50': '#FFF4B8',
-          '100': '#FFF1A3',
-          '200': '#FFEA7A',
-          '300': '#FFE452',
-          '400': '#FFDD29',
-          '500': '#FFD700',
-          '600': '#C7A800',
-          '700': '#8F7800',
-          '800': '#574900',
-          '900': '#1F1A00'
+        gold: {
+          DEFAULT: "#CBA663",
+          50: "#F9F5ED",
+          100: "#F4ECDD",
+          200: "#EADABF",
+          300: "#DFC9A0",
+          400: "#D5B782",
+          500: "#CBA663",
+          600: "#B88D3D",
+          700: "#8E6D2F",
+          800: "#644C21",
+          900: "#3A2C13",
         },
+      },
+      fontFamily:{
+        'overlock':['Overlock']
+      },
+      transitionProperty:{
+        'padding':'padding',
+        'border':'border-width'
       },
     },
   },
