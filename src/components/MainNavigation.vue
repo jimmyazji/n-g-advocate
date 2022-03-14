@@ -42,7 +42,7 @@
     <NavLink :to="{ name: 'team' }">{{ $t("nav.team") }}</NavLink>
     <NavLink :to="{ name: 'jobs' }">{{ $t("nav.jobs") }}</NavLink>
     <NavLink :to="{ name: 'contact' }">{{ $t("nav.contact") }}</NavLink>
-    <LocaleChanger />
+    <LocaleChanger class="xl:mx-8 lg:mx-6 sm:mx-4" />
   </nav>
   <nav class="sm:hidden py-4 px-2 transform border-b-2 border-gold-600">
     <div class="flex justify-between items-center text-gold-600">
