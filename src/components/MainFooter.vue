@@ -5,7 +5,7 @@
         <a
           href="#!"
           type="button"
-          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
+          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:border-gold-600 hover:text-gold-600 hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
           <svg
             aria-hidden="true"
@@ -27,7 +27,7 @@
         <a
           href="#!"
           type="button"
-          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
+          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:border-gold-600 hover:text-gold-600 hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
           <svg
             aria-hidden="true"
@@ -49,7 +49,7 @@
         <a
           href="#!"
           type="button"
-          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
+          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:border-gold-600 hover:text-gold-600 hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
           <svg
             aria-hidden="true"
@@ -71,7 +71,7 @@
         <a
           href="#!"
           type="button"
-          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
+          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:border-gold-600 hover:text-gold-600 hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
           <svg
             aria-hidden="true"
@@ -93,7 +93,7 @@
         <a
           href="#!"
           type="button"
-          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
+          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:border-gold-600 hover:text-gold-600 hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
           <svg
             aria-hidden="true"
@@ -115,7 +115,7 @@
         <a
           href="#!"
           type="button"
-          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
+          class="rounded-full border-2 border-gray-300 text-gray-300 leading-normal uppercase hover:border-gold-600 hover:text-gold-600 hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
           <svg
             aria-hidden="true"
