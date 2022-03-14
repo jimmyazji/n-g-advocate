@@ -1,0 +1,19 @@
+{
+    "services": [
+        {
+            "slug": "service-1",
+            "name": "Service 1",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sunt expedita sit ea ducimus deleniti dicta quaerat reiciendis consequatur soluta, provident Quo, temporibus, natus officiis cum labore laborum molestias consectetur alias corporis."
+        },
+        {
+            "slug": "service-2",
+            "name": "Service 2",
+            "description": "illum magni? Dicta voluptas dolore modi, culpa quibusdam exercitationem ea quo voluptatibus cumque, voluptatem asperiores saepe quisquam, fugit debitis doloribus voluptates magnam quasi voluptatum inventore quia ullam odit?"
+        },
+        {
+            "slug": "service-3",
+            "name": "Service 3",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita blanditiis necessitatibus aspernatur tempore numquam, molestias repellendus doloribus ipsam voluptatibus repellat!"
+        }
+    ]
+}

@@ -1,53 +1,54 @@
 <template>
   <nav
-    class="hidden sm:flex justify-center items-center text-gold-500 font-semibold border-b border-gold-600"
+    class="hidden sm:flex justify-center h-20 items-center text-gold-600 font-semibold border-b border-gold-600"
   >
-    <router-link
-      class="xl:px-8 lg:px-6 sm:px-4 py-8 hover:bg-neutral-800 hover:text-gold-200 transition-colors"
-      to="/"
+    <NavLink :to="{ name: 'home' }">{{ $t("nav.home") }}</NavLink>
+    <NavLink :to="{ name: 'about' }">{{ $t("nav.about") }}</NavLink>
+    <div
+      @mouseover="showServices()"
+      @mouseout="hideServices()"
+      class="relative h-full"
     >
-      {{ $t("nav.home") }}
-    </router-link>
-    <router-link
-      class="xl:px-8 lg:px-6 sm:px-4 py-8 hover:bg-neutral-800 hover:text-gold-200 transition-colors"
-      to="/about"
-      >{{ $t("nav.about") }}</router-link
-    >
-    <router-link
-      class="xl:px-8 lg:px-6 sm:px-4 py-8 hover:bg-neutral-800 hover:text-gold-200 transition-colors"
-      to="/services"
-    >
-      {{ $t("nav.services") }}
-      <i class="fa fa-angle-down ml-2 transform translate-y-0.5"></i>
-    </router-link>
-    <router-link
-      class="xl:px-8 lg:px-6 sm:px-4 py-8 hover:bg-neutral-800 hover:text-gold-200 transition-colors"
-      to="/team"
-    >
-      {{ $t("nav.team") }}
-    </router-link>
-    <router-link
-      class="xl:px-8 lg:px-6 sm:px-4 py-8 hover:bg-neutral-800 hover:text-gold-200 transition-colors"
-      to="/jobs"
-    >
-      {{ $t("nav.jobs") }}
-    </router-link>
-    <router-link
-      class="xl:px-8 lg:px-6 sm:px-4 py-8 hover:bg-neutral-800 hover:text-gold-200 transition-colors"
-      to="/contact"
-    >
-      {{ $t("nav.contact") }}
-    </router-link>
+      <NavLink to="/services">
+        {{ $t("nav.services") }}
+        <i class="fa fa-angle-down ml-2 transform translate-y-0.5"></i>
+      </NavLink>
+      <transition
+        enter-active-class="transition ease-out duration-200"
+        enter-from-class="transform opacity-0 scale-95"
+        enter-to-class="transform opacity-100 scale-100"
+        leave-active-class="transition ease-in duration-75"
+        leave-from-class="transform opacity-100 scale-100"
+        leave-to-class="transform opacity-0 scale-95"
+      >
+        <div
+          v-show="showingServices"
+          class="absolute z-50 mt-1 shadow-sm shadow-gold-800 origin-top-left left-0 w-36"
+          style="display: none"
+          @click="showingServices = false"
+        >
+          <ul class="ring-1 ring-gold-700 bg-neutral-900">
+            <NestedLink
+              v-for="service in services"
+              :key="service.slug"
+              :to="{ name: 'services.show', params: { slug: service.slug } }"
+            >
+              {{ service.name }}
+            </NestedLink>
+          </ul>
+        </div>
+      </transition>
+    </div>
+    <NavLink :to="{ name: 'team' }">{{ $t("nav.team") }}</NavLink>
+    <NavLink :to="{ name: 'jobs' }">{{ $t("nav.jobs") }}</NavLink>
+    <NavLink :to="{ name: 'contact' }">{{ $t("nav.contact") }}</NavLink>
     <LocaleChanger />
   </nav>
-  <nav
-    class="sm:hidden py-4 px-2 transform transition-[height]"
-    :class="showingNavigationDropdown ? 'h-50' : 'h-20'"
-  >
-    <div class="flex justify-between items-center text-gold-500">
+  <nav class="sm:hidden py-4 px-2 transform border-b-2 border-gold-600">
+    <div class="flex justify-between items-center text-gold-600">
       <button
         @click="showingNavigationDropdown = !showingNavigationDropdown"
-        class="inline-flex items-center font-bold justify-center p-2 rounded-md text-almond-500 hover:text-lonestar-500 hover:bg-almond-300 focus:outline-none focus:bg-gold-500 focus:text-gray-800 transition duration-150 ease-in-out"
+        class="inline-flex items-center font-bold justify-center p-2 rounded-md text-almond-600 hover:text-lonestar-600 hover:bg-almond-300 focus:outline-none focus:bg-gold-600 focus:text-gray-800 transition duration-150 ease-in-out"
       >
         <svg
           class="h-8 w-8"
@@ -79,47 +80,28 @@
       </button>
       <LocaleChanger />
     </div>
+    <div v-show="showingNavigationDropdown" class="sm:hidden block px-2">
+      <ResponsiveNavLink :to="{ name: 'contact' }">{{
+        $t("nav.home")
+      }}</ResponsiveNavLink>
+      <ResponsiveNavLink :to="{ name: 'about' }">{{
+        $t("nav.about")
+      }}</ResponsiveNavLink>
+      <ResponsiveNavLink :to="{ name: 'services' }"
+        >{{ $t("nav.services")
+        }}<i class="fa fa-angle-down ml-2 transform translate-y-0.5"></i
+      ></ResponsiveNavLink>
+      <ResponsiveNavLink :to="{ name: 'team' }">{{
+        $t("nav.team")
+      }}</ResponsiveNavLink>
+      <ResponsiveNavLink :to="{ name: 'jobs' }">{{
+        $t("nav.jobs")
+      }}</ResponsiveNavLink>
+      <ResponsiveNavLink :to="{ name: 'contact' }">{{
+        $t("nav.contact")
+      }}</ResponsiveNavLink>
+    </div>
   </nav>
-  <div
-    :class="showingNavigationDropdown ? 'block' : 'hidden'"
-    class="sm:hidden px-2 border-b-2 border-gold-500 pb-4"
-  >
-    <router-link
-      class="block py-2 pl-2 focus:bg-gold-500 focus:text-neutral-800"
-      to="/"
-    >
-      {{ $t("nav.home") }}
-    </router-link>
-    <router-link
-      class="block py-2 pl-2 focus:bg-gold-500 focus:text-neutral-800"
-      to="/about"
-      >{{ $t("nav.about") }}</router-link
-    >
-    <router-link
-      class="block py-2 pl-2 focus:bg-gold-500 focus:text-neutral-800"
-      to="/services"
-    >
-      {{ $t("nav.services") }}
-    </router-link>
-    <router-link
-      class="block py-2 pl-2 focus:bg-gold-500 focus:text-neutral-800"
-      to="/team"
-    >
-      {{ $t("nav.team") }}
-    </router-link>
-    <router-link
-      class="block py-2 pl-2 focus:bg-gold-500 focus:text-neutral-800"
-      to="/jobs"
-    >
-      {{ $t("nav.jobs") }}
-    </router-link>
-    <router-link
-      class="block py-2 pl-2 focus:bg-gold-500 focus:text-neutral-800"
-      to="/contact"
-    >
-      {{ $t("nav.contact") }}
-    </router-link>
-  </div>
 </template>
 <script>
 import LocaleChanger from "./LocaleChanger.vue";
@@ -130,5 +112,17 @@ export default {
 </script>
 <script setup>
 import { ref } from "vue";
+import NavLink from "@/components/NavLink.vue";
+import ResponsiveNavLink from "./ResponsiveNavLink.vue";
+import NestedLink from "./NestedLink.vue";
+import dataSource from "@/data.json";
+const services = dataSource.services;
 const showingNavigationDropdown = ref(false);
+const showingServices = ref(false);
+const showServices = () => {
+  showingServices.value = true;
+};
+const hideServices = () => {
+  showingServices.value = false;
+};
 </script>

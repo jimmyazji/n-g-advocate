@@ -1,7 +1,7 @@
 <template>
   <button
     @click="changeLocale()"
-    class="bg-gold-500 hover:bg-gold-200 border-2 border-gold-900 text-gray-800 px-4 py-2 flex justify-center items-center"
+    class="bg-gold-600 hover:bg-gold-400 focus:bg-gold-400 focus:outline-none border-2 border-gold-900 text-gray-800 px-4 py-2 flex justify-center items-center"
   >
     <span class="text-sm font-bold">{{
       $i18n.locale === "en" ? "العربية" : "English"
